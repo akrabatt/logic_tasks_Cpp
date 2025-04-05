@@ -12,7 +12,7 @@ void IntVectorManager::fill(int start, int end)
 		 throw std::invalid_argument("Error: start must be less than or equal to end\n"); 
 	}
 
-	int size = end - start;
+	int size = end - start + 1;
 	
 	vec.resize(size);
 	int i = 0;	
@@ -28,7 +28,7 @@ void IntVectorManager::print()
 	int i = 0;
 	for(auto &num : vec)
 	{
-		std::cout << "Elem " << i << ":" << num << "\n";
+		std::cout << "element" << i << ":" << num << "\n";
 		i++;
 	}
 }

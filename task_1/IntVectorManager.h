@@ -2,7 +2,7 @@
 #define VEC_CLASS
 
 // #include <iostream>
-// #include <vector>
+#include <vector>
 
 class IntVectorManager
 {
