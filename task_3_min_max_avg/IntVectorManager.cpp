@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 #include "IntVectorManager.h"
 
 IntVectorManager::IntVectorManager() { std::cout << "Constructor is called\n"; }
@@ -55,32 +56,24 @@ void IntVectorManager::remove_even()
 
 int IntVectorManager::get_min()
 {
-	int min_it = std::min_element(vec.begin(), vec.end());
+	if(vec.empty()) { std::cout << "Vector is empty!\n"; return 0; }
+	auto min_it = std::min_element(vec.begin(), vec.end());
 	
-	if(min_it != vec.end())
-	{
-		std::cout << "Min element: " << *min_it << "\n";
-	} else {
-		std::cout << "Vector is empty\n";
-	}
+	return *min_it;
 }
 
 int IntVectorManager::get_max()
 {
-	int max_it = std::max_element(vec.begin(), vec.end());
+	if(vec.empty()) { std::cout << "Vector is empty!\n"; return 0; }
+	auto max_it = std::max_element(vec.begin(), vec.end());
 	
-	if(max_it != vec.end())
-	{
-		std::cout << "Max element: " << *max_it << "\n";
-	} else {
-		std::cout << "Vector is empty\n";
-	}
+	return *max_it;
 }
 
-int IntVectorManager::get_average()
+float IntVectorManager::get_average()
 {
 	int size = vec.size();
-	int sum = std::accumulate(vec.begin, vec.end, 0);
+	int sum = std::accumulate(vec.begin(), vec.end(), 0);
 
-	return sum / size;
+	return static_cast<float>(sum) / static_cast<float>(size);
 }

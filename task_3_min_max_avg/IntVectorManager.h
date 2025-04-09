@@ -27,7 +27,7 @@ public:
 	int get_max();
 
 	// get average val
-	int get_average();
+	float get_average();
 
 private:
 	std::vector<int> vec;
