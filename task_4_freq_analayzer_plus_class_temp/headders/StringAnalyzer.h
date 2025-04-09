@@ -14,13 +14,13 @@ public:
 	~StringAnalyzer();
 
 	// fill vector
-	void add_data(const char &value) override;
+	void add_data(std::string value) override;
 
 	// print friq
 	void print_frequency() override;
 
 private:
-	std::vector<char> int_vec;
+	std::vector<std::string> str_vec;
 };
 
 #endif

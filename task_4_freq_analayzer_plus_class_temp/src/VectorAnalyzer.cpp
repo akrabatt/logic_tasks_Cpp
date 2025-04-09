@@ -13,14 +13,14 @@ VecotorAnalyzer::print_frequency()
 	
 	for(const int &value : int_vec)
 	{
-		var = std::to_string<std::string>(value);
+		std::string var = std::to_string(value);
 		// map find
 		if(map_int.find(var) != map_int.end())	
 		{
 			map_int[str_value]++;
-		} //else {
-		//	map_int[str_value] = 1;
-		//}
+		} else {
+			map_int[str_value] = 1;
+		}
 	}
 
 	for(auto &pair : map_int)
