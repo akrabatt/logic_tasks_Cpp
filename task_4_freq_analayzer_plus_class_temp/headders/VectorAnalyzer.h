@@ -3,15 +3,16 @@
 
 #include <iostream>
 #include <vector>
+#include "./DataAnalyzer.h"
 
 class VectorAnalyzer : public DataAnalyzer<int>
 {
 public:
 	
 	// constructor 
-	VectorAnalayzer();
+	VectorAnalyzer();
 	// destructor
-	~VectorAnalayzer();
+	~VectorAnalyzer();
 
 	// fill vector
 	void add_data(int value) override;	

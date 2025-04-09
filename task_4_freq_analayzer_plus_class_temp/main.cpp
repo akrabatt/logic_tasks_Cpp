@@ -1,6 +1,7 @@
 #include <iostream>
 #include "./headders/VectorAnalyzer.h"
 #include "./headders/StringAnalyzer.h"
+#include "./headders/DataAnalyzer.h"
 
 
 int main()
@@ -16,14 +17,17 @@ int main()
 	intAnalyzer->add_data(2);
 	intAnalyzer->print_frequency();
 
-	DataAnalyzer<int> *charAnalyzer = new StringAnalyzer();
-	charAnalyzer->add_data('a');
-	charAnalyzer->add_data('a');
-	charAnalyzer->add_data('b');
-	charAnalyzer->add_data('c');
-	charAnalyzer->add_data('z');
-	charAnalyzer->add_data('a');
-	charAnalyzer->add_data('b');
-	charAnalyzer->add_data('g');
+	DataAnalyzer<std::string> *charAnalyzer = new StringAnalyzer();
+	charAnalyzer->add_data("a");
+	charAnalyzer->add_data("a");
+	charAnalyzer->add_data("b");
+	charAnalyzer->add_data("c");
+	charAnalyzer->add_data("z");
+	charAnalyzer->add_data("a");
+	charAnalyzer->add_data("b");
+	charAnalyzer->add_data("g");
 	charAnalyzer->print_frequency();
+	
+	delete intAnalyzer;
+	delete charAnalyzer;
 }

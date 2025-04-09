@@ -9,12 +9,12 @@ class DataAnalyzer
 {
 public:
 	// constructor 
-	DataAnalayzer() { std::cout << "Base class Constructor invoked!\n"; }
+	DataAnalyzer() { std::cout << "Base class Constructor invoked!\n"; }
 	// destructor
-	virtual ~DataAnalayzer() { std::cout << "Base class Destructor invoked!\n"; }
+	virtual ~DataAnalyzer() { std::cout << "Base class Destructor invoked!\n"; }
 
 	// virtual method for fill data
-	virtual void add_data(T value)
+	virtual void add_data(T value) = 0;
 
 	// virtual method print frequency
 	virtual void print_frequency() = 0;

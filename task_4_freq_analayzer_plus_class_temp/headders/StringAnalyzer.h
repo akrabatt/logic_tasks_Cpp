@@ -3,8 +3,9 @@
 
 #include <iostream>
 #include <vector>
+#include "./DataAnalyzer.h"
 
-class StringAnalyzer : public DataAnalyzer<char>
+class StringAnalyzer : public DataAnalyzer<std::string>
 {
 public:
 	

@@ -2,12 +2,12 @@
 #include "../headders/VectorAnalyzer.h"
 
 
-VectorAnalyzer() { std::cout << "VecAnaly constructor invoked!\n"; }
-~vectorAnalyzer() { std::cout << "VecAnaly destructor invoked!\n"; }
+VectorAnalyzer::VectorAnalyzer() { std::cout << "VecAnaly constructor invoked!\n"; }
+VectorAnalyzer::~VectorAnalyzer() { std::cout << "VecAnaly destructor invoked!\n"; }
 
-VectorAnalyzer::add_data(int value) { int_vec.push_back(value); }
+void VectorAnalyzer::add_data(int value) { int_vec.push_back(value); }
 
-VecotorAnalyzer::print_frequency()
+void VectorAnalyzer::print_frequency()
 {
 	std::unordered_map<std::string, int> map_int;
 	
@@ -17,9 +17,9 @@ VecotorAnalyzer::print_frequency()
 		// map find
 		if(map_int.find(var) != map_int.end())	
 		{
-			map_int[str_value]++;
+			map_int[var]++;
 		} else {
-			map_int[str_value] = 1;
+			map_int[var] = 1;
 		}
 	}
 
