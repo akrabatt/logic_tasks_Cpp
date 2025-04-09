@@ -14,7 +14,7 @@ public:
 	~VectorAnalayzer();
 
 	// fill vector
-	void add_data(const int &value) override;	
+	void add_data(int value) override;	
 
 	// print friq
 	void print_frequency() override;

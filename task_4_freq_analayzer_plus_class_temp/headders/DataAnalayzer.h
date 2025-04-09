@@ -14,7 +14,7 @@ public:
 	virtual ~DataAnalayzer() { std::cout << "Base class Destructor invoked!\n"; }
 
 	// virtual method for fill data
-	virtual void add_data(const T& value)
+	virtual void add_data(T value)
 
 	// virtual method print frequency
 	virtual void print_frequency() = 0;
