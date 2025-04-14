@@ -13,6 +13,12 @@ public:
 	// destructor
 	~LRUCache();
 
+	// getters 
+	int get_vec_size();
+
+	// vec setter
+	void put(int key, int value);
+
 
 private:
 	int vec_size;

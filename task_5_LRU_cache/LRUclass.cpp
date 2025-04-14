@@ -15,4 +15,13 @@ LRUCache::~LRUCache() { std::cout << "Destructor is called\n" }
 
 //----------------------------------------------------------------------
 
+// getters
+int LRUCache::get_vec_size() { return vec_size; }
 
+
+
+// setters
+void LRUCache::put(int key, int value)
+{
+	vec.insert(vec.begin() + key, value);
+}
