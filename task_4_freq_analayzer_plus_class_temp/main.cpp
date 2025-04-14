@@ -26,6 +26,7 @@ int main()
 	charAnalyzer->add_data("a");
 	charAnalyzer->add_data("b");
 	charAnalyzer->add_data("g");
+	charAnalyzer->add_data("abcd");
 	charAnalyzer->print_frequency();
 	
 	delete intAnalyzer;
