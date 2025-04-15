@@ -14,26 +14,16 @@ public:
 	// destructor
 	~LRUCache();
 
-	// getters 
-	int get_map_size(); 			// get map's capacity
-	std::pair get_fresh_val();		// get current frash value
-	std::pair get_unfresh_val();	// get current unfrash value
-
-	// setter
 	void put(int key, int value);				// add value to LRU cache	
-	void set_fresh_val(std::pair fresh);		// set fresh facility from LRUChache
-	void set_unfresh_val(std::pair unfresh);	// set unfresh facility from LRUCache
+	
+	int get(int key);
 
 
 private:
 	// cache container
 	int map_size;
-	std::unordered_map<int, int> map;
-	std::list<std::pair<int, int> chache;
-
-	// current bordering values
-	std::pair<int, int> fresh_val;
-	std::pair<int, int> unfresh_val;
+	std::list<std::pair<int, int>> chache_list;
+	std::unordered_map<int, std::list<std::pair<int, int>>::iterator> cache_map;
 };
 
 
