@@ -23,6 +23,7 @@ int LRUCache::get_map_size() { return map_size; }
 // setters
 void LRUCache::put(int key, int value)
 {
+	if(key > get_map_size()) { std::cout << "Error key more than max capacity!"; return; }	
 	
 	map.insert(key, value);
 }
