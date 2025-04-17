@@ -1,5 +1,5 @@
 #include <iostream>
-#include "LRUCache.h"
+#include "LRUclass.h"
 
 
 int main()
@@ -12,13 +12,13 @@ int main()
 	
 	cache.print_cache();
 	
-	std::cout << cache.get(1);
+	std::cout << "get key: 1, value: " << cache.get(1) << "\n";
 
 	cache.put(4, 40);
 
 	cache.print_cache();
 
-	std::cout << cache.get(3);
+	std::cout << "get key: 3, value: " << cache.get(3) << "\n";
 
 	cache.print_cache();
 

@@ -1,6 +1,8 @@
 #ifndef LRU_H
 #define LRU_H
 
+#include <list>
+#include <unordered_map>
 
 class LRUCache
 {

@@ -1,24 +1,24 @@
 #include <iostream>
 #include <vector>
-#include "LRUCache.h"
+#include "LRUclass.h"
 
 // constructors and destructors 
 // ---------------------------------------------------------------------
 LRUCache::LRUCache(){ std::cout << "Default constructor invoked\n"; }
 
-LRUCache::LRUCache(int m_size) : m_size(map_size) 
+LRUCache::LRUCache(int m_size) : capacity(m_size) 
 { 
-	std::cout << "Constructor with params invoked, vector's size: " << vec_size << "\n";
+	std::cout << "Constructor with params invoked\n";
 }
 
-LRUCache::~LRUCache() { std::cout << "Destructor is called\n" }
+LRUCache::~LRUCache() { std::cout << "Destructor is called\n"; }
 
 //----------------------------------------------------------------------
 
 
 int LRUCache::get(int key)
 {
-	if(cache_map.find(key) == cahe_map.end()) { return -1; } // key isn't found
+	if(cache_map.find(key) == cache_map.end()) { return -1; } // key isn't found
 
 	// move element to begin list
 	cache_list.splice(cache_list.begin(), cache_list, cache_map[key]);

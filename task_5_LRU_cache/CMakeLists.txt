@@ -7,5 +7,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(LRUCache
 	main.cpp
-	LRUCache.cpp
+	LRUclass.cpp
 )
