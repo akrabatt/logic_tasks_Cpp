@@ -15,15 +15,45 @@ LRUCache::~LRUCache() { std::cout << "Destructor is called\n" }
 
 //----------------------------------------------------------------------
 
-// getters
-int LRUCache::get_map_size() { return map_size; }
 
+int LRUCache::get(int key)
+{
+	if(cache_map.find(key) == cahe_map.end()) { return -1; } // key isn't found
 
+	// move element to begin list
+	cache_list.splice(cache_list.begin(), cache_list, cache_map[key]);
+	return cache_map[key]->second;
+}
 
-// setters
 void LRUCache::put(int key, int value)
 {
-	if(key > get_map_size()) { std::cout << "Error key more than max capacity!"; return; }	
-	
-	map.insert(key, value);
+	// check is key already exist
+	if(cache_map.find(key) != cache_map.end())
+	{
+		cache_list.splice(cache_list.begin(), cache_list, cache_map[key]);	
+		cache_map[key]->second = value;
+		return;
+	}	
+
+	// if cache is full, delete last used/touched element
+	if(cache_list.size() == capacity)
+	{
+		int last_key = cache_list.back().first;
+		cache_map.erase(last_key);
+		cache_list.pop_back();
+	}
+
+	// add new element to begint of container
+	cache_list.emplace_front(key, value);
+	cache_map[key] = cache_list.begin();
+}
+
+void LRUCache::print_cache()
+{
+	std::cout << "list:\n";	
+
+	for(auto &it : cache_list)
+	{
+		std::cout << "key: " << it.first << "value: " << it.second << "\n";
+	}
 }

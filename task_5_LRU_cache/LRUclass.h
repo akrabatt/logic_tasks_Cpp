@@ -14,15 +14,20 @@ public:
 	// destructor
 	~LRUCache();
 
-	void put(int key, int value);				// add value to LRU cache	
+	// put new facility to cache
+	void put(int key, int value);					
 	
+	// get facility from cache
 	int get(int key);
+		
+	// print cache
+	void print_cache();
 
 
 private:
 	// cache container
-	int map_size;
-	std::list<std::pair<int, int>> chache_list;
+	int capacity;
+	std::list<std::pair<int, int>> cache_list;
 	std::unordered_map<int, std::list<std::pair<int, int>>::iterator> cache_map;
 };
 
