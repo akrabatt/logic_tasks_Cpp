@@ -1,6 +1,4 @@
-#include <vector>
-#include <functional>
-#include <algorithm>
+#include "../headers/class_def_sort.h"
 
 void DefaultSort::sort(std::vector<int>& data)
 {
