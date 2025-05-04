@@ -14,7 +14,7 @@ private:
 public:
 
 	// set strategy for sorting
-	void setStrategy(std::unique_ptr<SortStrategy<int> newStrategy>);
+	void setStrategy(std::unique_ptr<SortStrategy<int>> newStrategy);
 
 	// add number to vector
 	void addNumber(int num);

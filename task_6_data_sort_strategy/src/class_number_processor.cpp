@@ -2,7 +2,7 @@
 #include "../headers/class_number_processor.h"
 
 
-void NumberProcessor::setStrategy(std::unique_ptr<SortStrategy<int> newStrategy)
+void NumberProcessor::setStrategy(std::unique_ptr<SortStrategy<int>> newStrategy)
 {
 	strategy = std::move(newStrategy);
 }
