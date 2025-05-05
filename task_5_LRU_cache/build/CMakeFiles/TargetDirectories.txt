@@ -1,3 +1,0 @@
-/home/dmitrii/programming/logic_tasks_Cpp/task_5_LRU_cache/build/CMakeFiles/LRUCache.dir
-/home/dmitrii/programming/logic_tasks_Cpp/task_5_LRU_cache/build/CMakeFiles/edit_cache.dir
-/home/dmitrii/programming/logic_tasks_Cpp/task_5_LRU_cache/build/CMakeFiles/rebuild_cache.dir
