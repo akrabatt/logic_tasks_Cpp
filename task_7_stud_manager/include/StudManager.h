@@ -1,8 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <algorithm>
 #include "Student.h"
-
 
 class StudManager
 {
@@ -15,7 +15,7 @@ public:
 	void addStudent(const Student& student);
 
 	// return student by name
-	Student* findStudentByName(const std::string& name) const;
+	const Student* findStudentByName(const std::string& name) const;
 
 	// print all students
 	void printAllStudents() const;
