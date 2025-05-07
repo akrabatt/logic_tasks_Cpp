@@ -27,7 +27,7 @@ const Student* StudManager::findStudentByName(const std::string& name) const
 
 void StudManager::printAllStudents() const
 {
-	for(auto stud : students)
+	for(auto stud& : students)
 	{
 		std::cout << "Name: " << stud.getName()
 				  << ", Cours: " << stud.getCourse()
