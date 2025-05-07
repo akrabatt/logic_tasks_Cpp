@@ -20,7 +20,7 @@ public:
 	// print all students
 	void printAllStudents() const;
 
-	// group students accordint to courses
+	// group students acording to courses
 	std::map<int, std::vector<Student>>	groupeByCourse() const;
 
 	// sort students by name

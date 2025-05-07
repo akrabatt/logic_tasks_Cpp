@@ -44,4 +44,13 @@ std::map<int, std::vector<Student>> StudManager::groupeByCourse() const
 	{
 		grouped_students[stud.getCourse()].push_back(stud);
 	}
+
+	return grouped_studs;
+}
+
+void StudManager::sortByName()
+{		
+	std::sort(students.begin(), students.end()
+				[](const Student& a, const Student& b){
+					return a.getName() < b.getName(); });
 }
