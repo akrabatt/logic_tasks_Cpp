@@ -54,3 +54,36 @@ void StudManager::sortByName()
 				[](const Student& a, const Student& b){
 					return a.getName() < b.getName(); });
 }
+
+double StudManager::getAverageAge() const
+{
+	double averageAge = 0;	
+	for(const auto& stud : students)
+	{
+		averageAge += stud.getAge();
+	}
+
+	return averageAge / sutents.size();	
+}
+
+//std::vector<std::string> StudManager::getAllNames() const
+//{
+//	std::vector<std::string> studNames;
+//	studNames.reserve(students.size());
+//	for(const auto& stud : students)
+//	{
+//		studNames.push_back(stud.getName());
+//	}
+//
+//	return studNames;
+//}
+
+std::vector<std::string> StudManager::getAllNames() const
+{
+	std::vector<std::string> studNames;
+	studNames.reserve(students.size());
+
+	std::transform(students.begin(), sutdents.end()
+					std::back_insert(studNames),
+					[](const Students& stud){ return stud.getName(); });
+}
