@@ -19,7 +19,7 @@ public:
 	Student(std::string _name,
 			unsigned int _age,
 			unsigned int _course,
-			std::vecotr<int> _grades);  
+			std::vector<int> _grades);  
 
 	// getters
 	std::string getName() const;

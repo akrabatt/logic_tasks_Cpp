@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <algorithm>
+#include <functional>
+#include <map>
 #include "Student.h"
 
 class StudManager
@@ -31,4 +33,10 @@ public:
 
 	// get all namese 
 	std::vector<std::string> getAllNames() const;
+
+	// alias fo lambda filter
+	using Filter = std::function<bool(Student& s)>;
+
+	// obtain filter type and return filtered vector
+	std::vector<Student> filterStudents(const Filter& filter) const;
 };

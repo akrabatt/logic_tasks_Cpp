@@ -84,6 +84,13 @@ std::vector<std::string> StudManager::getAllNames() const
 	studNames.reserve(students.size());
 
 	std::transform(students.begin(), sutdents.end()
-					std::back_insert(studNames),
+					std::back_inserter(studNames),
 					[](const Students& stud){ return stud.getName(); });
+}
+
+std::vector<Students> filterStudents(const Filter& filter) const
+{
+	std::vector<Student> result;
+	std::copy_if(students.begin(), students.end(), std::back_inserter(result), filter);
+	return result;
 }
