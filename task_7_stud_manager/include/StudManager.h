@@ -35,7 +35,7 @@ public:
 	std::vector<std::string> getAllNames() const;
 
 	// alias fo lambda filter
-	using Filter = std::function<bool(Student& s)>;
+	using Filter = std::function<bool(const Student&)>;
 
 	// obtain filter type and return filtered vector
 	std::vector<Student> filterStudents(const Filter& filter) const;

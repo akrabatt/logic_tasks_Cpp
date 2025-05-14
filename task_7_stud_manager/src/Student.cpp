@@ -19,7 +19,7 @@ unsigned int Student::getCourse() const { return course; }
 
 const std::vector<int>& Student::getGrades() const { return grades; }
 
-double Student::getAverageGrade()
+double Student::getAverageGrade() const
 {
 	if(grades.empty()) { return 0.0; }
 	int sum = std::accumulate(grades.begin(), grades.end(), 0);

@@ -1,8 +1,6 @@
 #include "../include/StudManager.h"
 #include "../include/Student.h"
 
-StudManager::StudManager() {}
-
 void StudManager::addStudent(const Student& student) { students.push_back(student); }
 
 //const Student* findStudentByName(const std::string& name) const
@@ -27,7 +25,7 @@ const Student* StudManager::findStudentByName(const std::string& name) const
 
 void StudManager::printAllStudents() const
 {
-	for(auto stud& : students)
+	for(auto& stud : students)
 	{
 		std::cout << "Name: " << stud.getName()
 				  << ", Cours: " << stud.getCourse()
@@ -42,7 +40,7 @@ std::map<int, std::vector<Student>> StudManager::groupeByCourse() const
 
 	for(const auto& stud : students)
 	{
-		grouped_students[stud.getCourse()].push_back(stud);
+		grouped_studs[stud.getCourse()].push_back(stud);
 	}
 
 	return grouped_studs;
@@ -50,7 +48,7 @@ std::map<int, std::vector<Student>> StudManager::groupeByCourse() const
 
 void StudManager::sortByName()
 {		
-	std::sort(students.begin(), students.end()
+	std::sort(students.begin(), students.end(),
 				[](const Student& a, const Student& b){
 					return a.getName() < b.getName(); });
 }
@@ -63,7 +61,7 @@ double StudManager::getAverageAge() const
 		averageAge += stud.getAge();
 	}
 
-	return averageAge / sutents.size();	
+	return averageAge / students.size();	
 }
 
 //std::vector<std::string> StudManager::getAllNames() const
@@ -83,12 +81,14 @@ std::vector<std::string> StudManager::getAllNames() const
 	std::vector<std::string> studNames;
 	studNames.reserve(students.size());
 
-	std::transform(students.begin(), sutdents.end()
+	std::transform(students.begin(), students.end(),
 					std::back_inserter(studNames),
-					[](const Students& stud){ return stud.getName(); });
+					[](const Student& stud){ return stud.getName(); });
+
+	return studNames;
 }
 
-std::vector<Students> filterStudents(const Filter& filter) const
+std::vector<Student> StudManager::filterStudents(const Filter& filter) const
 {
 	std::vector<Student> result;
 	std::copy_if(students.begin(), students.end(), std::back_inserter(result), filter);

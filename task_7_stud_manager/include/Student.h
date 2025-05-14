@@ -25,8 +25,8 @@ public:
 	std::string getName() const;
 	unsigned int getAge() const;
 	unsigned int getCourse() const;
-	const std::vector<int> getGrades() const;
+	const std::vector<int>& getGrades() const;
 
 	// get avarage mark
-	double getAverageGrade();
+	double getAverageGrade() const;
 };

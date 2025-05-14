@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/StudManager.dir/main.cpp.o CMakeFiles/StudManager.dir/src/Student.cpp.o CMakeFiles/StudManager.dir/src/StudManager.cpp.o -o StudManager 
