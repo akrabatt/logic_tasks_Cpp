@@ -1,0 +1,3 @@
+/home/dmitrii/programming/logic_tasks_Cpp/task_8_stack/build/CMakeFiles/Stack.dir
+/home/dmitrii/programming/logic_tasks_Cpp/task_8_stack/build/CMakeFiles/edit_cache.dir
+/home/dmitrii/programming/logic_tasks_Cpp/task_8_stack/build/CMakeFiles/rebuild_cache.dir
