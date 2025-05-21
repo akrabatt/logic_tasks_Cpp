@@ -2,7 +2,7 @@
 
 class Singleton
 {
-	int data{0};
+	int data = 5;
 	// this pointer point to only one object (itself)
 	static Singleton* instance_ptr;
 
@@ -21,8 +21,14 @@ public:
 		}
 		return instance_ptr;
 	}
+
+	void print_data()
+	{
+		std::cout << data << std::endl;
+	}
 };
 
+// need to define this variable for compile
 Singleton* Singleton::instance_ptr = nullptr;
 
 int main()
@@ -32,6 +38,8 @@ int main()
 
 	std::cout << ptr1 << std::endl;
 	std::cout << ptr2 << std::endl;
+
+	ptr1->print_data();
 
 	delete ptr1;
 }
